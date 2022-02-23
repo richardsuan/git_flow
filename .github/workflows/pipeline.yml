@@ -1,0 +1,30 @@
+name: pipeline test
+
+on:
+  push:
+    branches:
+      - feature/*
+    
+
+env:
+  titulo: 'prueba git_flow'
+  version: '1.0.0'
+
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    environment: master
+    steps: 
+      - uses: actions/checkout@v2
+      - name: printhola
+        run: echo 'hola $NAME_ENVIRONMENT'
+        with:
+          NAME_ENVIRONMENT: {{ env.titulo }}
+
+  unit-test: 
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: actions/checkout@v2
+      - name: pruebas unitarias
+        run: npm run test
