@@ -20,7 +20,7 @@ jobs:
       - name: printhola
         run: echo 'hola $NAME_ENVIRONMENT'
         env:
-          NAME_ENVIRONMENT: {{ env.titulo }}
+          NAME_ENVIRONMENT: ${{ env.titulo }}
 
   unit-test: 
     runs-on: ubuntu-latest    
