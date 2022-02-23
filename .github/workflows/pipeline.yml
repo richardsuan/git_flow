@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: printhola
         run: echo 'hola $NAME_ENVIRONMENT'
-        with:
+        env:
           NAME_ENVIRONMENT: {{ env.titulo }}
 
   unit-test: 
